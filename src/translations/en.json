@@ -104,15 +104,17 @@
     "title": "Photo Gallery",
     "subtitle": "Moments We Cherish",
     "photos": [
-      "Cusco, Peru",
       "Lima, Peru",
       "Quito, Ecuador",
-      "Colombia",
-      "New York City",
-      "Niagara Falls",
+      "Medellin, Colombia",
+      "Jardin, Colombia",
+      "Bogota, Colombia",
+      "New York City, US",
+      "Niagara Falls, US",
       "Nagoya, Japan",
       "Hong Kong",
       "Busan, Korea",
+      "Gyeongju, Korea",
       "Hong Kong"
     ]
   },
