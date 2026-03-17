@@ -20,6 +20,9 @@ export const metadata: Metadata = {
   title: "Ken & Man Man | April 3, 2027",
   description:
     "Join us to celebrate the wedding of Ken Lee and Man Man Jim on April 3rd, 2027 at KU Convention Wedding Hall, Seoul.",
+  icons: {
+    icon: "/favicon.svg",
+  },
 };
 
 export default function RootLayout({
