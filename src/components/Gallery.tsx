@@ -4,17 +4,19 @@ import { useState, useRef, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const photos = [
-  "/1.jpg",
-  "/2.jpg",
-  "/3.jpg",
-  "/4.jpg",
-  "/5.JPG",
-  "/6.JPG",
-  "/7.JPG",
-  "/8.JPG",
-  "/9.JPG",
-  "/10.JPG",
+  `${basePath}/1.jpg`,
+  `${basePath}/2.jpg`,
+  `${basePath}/3.jpg`,
+  `${basePath}/4.jpg`,
+  `${basePath}/5.JPG`,
+  `${basePath}/6.JPG`,
+  `${basePath}/7.JPG`,
+  `${basePath}/8.JPG`,
+  `${basePath}/9.JPG`,
+  `${basePath}/10.JPG`,
 ];
 
 export default function Gallery() {
