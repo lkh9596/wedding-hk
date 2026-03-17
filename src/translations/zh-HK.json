@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "主頁",
+    "story": "我哋嘅故事",
+    "schedule": "流程",
+    "venue": "場地",
+    "dressCode": "衣著",
+    "gallery": "相簿",
+    "contact": "聯絡"
+  },
+  "hero": {
+    "groom": "Ken Lee",
+    "bride": "Man Man Jim",
+    "and": "&",
+    "date": "2027年4月3日",
+    "tagline": "我哋結婚喇！",
+    "scrollDown": "向下瀏覽"
+  },
+  "countdown": {
+    "title": "距離我哋嘅大日子",
+    "days": "日",
+    "hours": "時",
+    "minutes": "分",
+    "seconds": "秒",
+    "passed": "我哋嘅婚禮到喇！"
+  },
+  "story": {
+    "title": "我哋嘅故事",
+    "subtitle": "一切點樣開始",
+    "paragraphs": [
+      "我哋嘅故事由秘魯庫斯科嘅Qorikancha開始——一座古老嘅印加神殿，兩個亞洲旅人喺度偶然相遇。我哋即刻留意到對方，因為全場得我哋兩個亞洲面孔，但當時一句話都冇講過。",
+      "緣分自有安排。幾日之後，我哋竟然入住咗利馬同一間民宿Hotel Prada。今次，我哋終於正式自我介紹，之後一齊食飯、飲咖啡、漫步利馬街頭。",
+      "我哋捨不得講再見，於是決定一齊去厄瓜多爾基多，喺赤道上合照，漫步歷史古城。之後，我哋去咗哥倫比亞一齊學西班牙文同跳Salsa。",
+      "我哋嘅冒險延伸到美洲各地——紐約街頭、尼亞加拉大瀑布，仲有好多好多地方。幾個月後，我哋喺日本名古屋重逢，一齊探索呢個城市。",
+      "之後Ken嚟到香港——Man Man嘅家鄉——體驗佢嘅世界、佢最鍾意嘅地方、同佢成長嘅城市。",
+      "經歷咗咁多旅程、咁多對話、橫跨幾個大洲嘅無數時刻，Ken已經好確定——Man Man就係佢人生最完美嘅伴侶。而家，我哋準備好開始人生最偉大嘅冒險，希望你哋可以見證我哋講出「我願意」嘅一刻。"
+    ]
+  },
+  "timeline": {
+    "title": "婚禮當日流程",
+    "subtitle": "同我哋共度每個時刻",
+    "events": [
+      {
+        "time": "下午 3:50",
+        "title": "賓客到場",
+        "description": "請喺儀式開始前入座"
+      },
+      {
+        "time": "下午 4:20",
+        "title": "婚禮儀式",
+        "description": "喺大禮堂交換誓詞同戒指"
+      },
+      {
+        "time": "下午 4:50",
+        "title": "婚宴自助餐",
+        "description": "超過100道菜式同甜品嘅豐盛自助餐"
+      },
+      {
+        "time": "下午 5:50",
+        "title": "禮成",
+        "description": "多謝大家嚟同我哋慶祝！"
+      }
+    ]
+  },
+  "venue": {
+    "title": "場地及交通",
+    "subtitle": "點樣搵到我哋",
+    "name": "KU Convention Wedding Hall",
+    "address": "韓國首爾廣津區峨嵯山路36街5號",
+    "mapPlaceholder": "互動地圖",
+    "mapNote": "地圖將會嵌入呢度",
+    "directionsTitle": "點樣去",
+    "directions": [
+      {
+        "caption": "2號線 — 建大入口站5號出口\n7號線 — 建大入口站4號出口",
+        "label": "搭地鐵"
+      },
+      {
+        "caption": "KU Convention Wedding Hall 專用停車場（免費1小時）\n建大獸醫學院停車場（免費2小時）",
+        "label": "揸車"
+      },
+      {
+        "caption": "場地入口喺大廈正門中間",
+        "label": "入口"
+      }
+    ],
+    "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！"
+  },
+  "dressCode": {
+    "title": "衣著要求",
+    "subtitle": "著咩好",
+    "code": "半正式 / 正式",
+    "description": "韓國婚禮要求半正式至正式嘅衣著，請著得優雅得體。",
+    "suggestions": {
+      "title": "建議",
+      "items": [
+        "女士：裙、優雅上衣配半裙、或精緻套裝",
+        "男士：西裝或恤衫配西褲同皮鞋",
+        "請避免：牛仔褲、波鞋、休閒裝、短褲、拖鞋或白色衫（留畀新娘）"
+      ]
+    }
+  },
+  "gallery": {
+    "title": "相簿",
+    "subtitle": "我哋珍惜嘅時刻",
+    "photos": [
+      "庫斯科，秘魯",
+      "利馬，秘魯",
+      "基多，厄瓜多爾",
+      "哥倫比亞",
+      "紐約",
+      "尼亞加拉大瀑布",
+      "名古屋，日本",
+      "香港",
+      "釜山，韓國",
+      "香港"
+    ]
+  },
+  "contact": {
+    "title": "聯絡我哋",
+    "subtitle": "有問題？我哋好樂意聽你講",
+    "description": "如果你對婚禮、住宿或其他嘢有任何問題，歡迎隨時聯絡我哋。",
+    "groom": {
+      "label": "新郎",
+      "name": "Ken Lee",
+      "phone": "+82 10-3711-4554",
+      "email": "lkh9596@gmail.com"
+    },
+    "bride": {
+      "label": "新娘",
+      "name": "Man Man Jim",
+      "phone": "+852 5406-1000",
+      "email": "manmanjim@gmail.com"
+    },
+    "rsvpNote": "請於2027年3月1日前回覆出席"
+  },
+  "footer": {
+    "text": "Ken & Man Man — 2027年4月3日",
+    "madeWith": "用愛製作"
+  },
+  "lang": {
+    "switch": "English"
+  }
+}

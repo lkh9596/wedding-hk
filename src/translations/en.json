@@ -1,0 +1,144 @@
+{
+  "nav": {
+    "home": "Home",
+    "story": "Our Story",
+    "schedule": "Schedule",
+    "venue": "Venue",
+    "dressCode": "Dress Code",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "groom": "Ken Lee",
+    "bride": "Man Man Jim",
+    "and": "&",
+    "date": "April 3rd, 2027",
+    "tagline": "We're getting married!",
+    "scrollDown": "Scroll to explore"
+  },
+  "countdown": {
+    "title": "Counting Down to Our Special Day",
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "passed": "Our wedding day has arrived!"
+  },
+  "story": {
+    "title": "Our Story",
+    "subtitle": "How It All Began",
+    "paragraphs": [
+      "Our story began at Qorikancha in Cusco, Peru — an ancient Incan temple where two travellers from Asia happened to cross paths. We noticed each other right away, the only Asian faces in the crowd, but we didn't exchange a single word.",
+      "Fate had other plans. Days later, we both checked into Hotel Prada, a cozy guesthouse in Lima. This time, we introduced ourselves properly and spent the days sharing meals, drinking coffee, and exploring the streets of Lima together.",
+      "We weren't ready to say goodbye. We decided to travel to Quito, Ecuador, where we stood together at the equator and wandered through the beautiful historic center. From there, we headed to Colombia, where we learned Spanish and danced salsa together.",
+      "Our adventures continued across the Americas — exploring the streets of New York City, standing in awe at Niagara Falls, and discovering countless places along the way. A few months later, we reunited in Nagoya, Japan, wandering through the city together.",
+      "Then came Hong Kong — Man Man's hometown — where Ken got to experience her world, her favourite places, and the city she grew up in.",
+      "After all the travels, all the conversations, and all the moments shared across continents, Ken knew without a doubt — Man Man was the perfect partner for life. Now, we're ready to begin our greatest adventure yet, and we want you to be there when we say \"I do.\""
+    ]
+  },
+  "timeline": {
+    "title": "Wedding Day Schedule",
+    "subtitle": "Join Us for Every Moment",
+    "events": [
+      {
+        "time": "3:50 PM",
+        "title": "Guest Arrival",
+        "description": "Please be seated before the ceremony begins"
+      },
+      {
+        "time": "4:20 PM",
+        "title": "Wedding Ceremony",
+        "description": "Exchange of vows and rings in the grand hall"
+      },
+      {
+        "time": "4:50 PM",
+        "title": "Wedding Dinner",
+        "description": "Grand buffet feast with over 100 dishes and desserts"
+      },
+      {
+        "time": "5:50 PM",
+        "title": "Closing",
+        "description": "Thank you for celebrating with us!"
+      }
+    ]
+  },
+  "venue": {
+    "title": "Venue & Directions",
+    "subtitle": "Where to Find Us",
+    "name": "KU Convention Wedding Hall",
+    "address": "5 Achasan-ro 36-gil, Gwangjin District, Seoul, Korea",
+    "mapPlaceholder": "Interactive Map",
+    "mapNote": "Map will be embedded here",
+    "directionsTitle": "How to Get There",
+    "directions": [
+      {
+        "caption": "Line 2 — Konkuk Univ. Station, Exit 5\nLine 7 — Konkuk Univ. Station, Exit 4",
+        "label": "From Subway"
+      },
+      {
+        "caption": "KU Convention Wedding Hall parking (1 hour free)\nKonkuk Univ. Veterinary College parking (2 hours free)",
+        "label": "By Car"
+      },
+      {
+        "caption": "The venue entrance is at the front of the building, center",
+        "label": "Entrance"
+      }
+    ],
+    "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!"
+  },
+  "dressCode": {
+    "title": "Dress Code",
+    "subtitle": "What to Wear",
+    "code": "Semi-Formal / Formal",
+    "description": "Korean weddings follow a semi-formal to formal dress code. Please dress elegantly to match the occasion.",
+    "suggestions": {
+      "title": "Suggestions",
+      "items": [
+        "Ladies: Dresses, elegant blouses with skirts, or dressy separates",
+        "Gentlemen: Suits or dress shirts with slacks and dress shoes",
+        "Please avoid: Jeans, sneakers, casual wear, shorts, flip-flops, or white outfits (reserved for the bride)"
+      ]
+    }
+  },
+  "gallery": {
+    "title": "Photo Gallery",
+    "subtitle": "Moments We Cherish",
+    "photos": [
+      "Cusco, Peru",
+      "Lima, Peru",
+      "Quito, Ecuador",
+      "Colombia",
+      "New York City",
+      "Niagara Falls",
+      "Nagoya, Japan",
+      "Hong Kong",
+      "Busan, Korea",
+      "Hong Kong"
+    ]
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Questions? We'd Love to Hear from You",
+    "description": "If you have any questions about the wedding, accommodation, or anything else, please don't hesitate to reach out.",
+    "groom": {
+      "label": "Groom",
+      "name": "Ken Lee",
+      "phone": "+82 10-3711-4554",
+      "email": "lkh9596@gmail.com"
+    },
+    "bride": {
+      "label": "Bride",
+      "name": "Man Man Jim",
+      "phone": "+852 5406-1000",
+      "email": "manmanjim@gmail.com"
+    },
+    "rsvpNote": "Please RSVP by March 1st, 2027"
+  },
+  "footer": {
+    "text": "Ken & Man Man — April 3, 2027",
+    "madeWith": "Made with love"
+  },
+  "lang": {
+    "switch": "粵語"
+  }
+}
