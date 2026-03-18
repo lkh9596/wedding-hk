@@ -74,6 +74,38 @@ export default function DressCode() {
             </ul>
           </div>
         </ScrollAnimation>
+
+        {/* Dress code example photos */}
+        <ScrollAnimation>
+          <div className="mt-10 max-w-xl mx-auto space-y-6">
+            <div>
+              <p className="text-gold-light text-sm mb-3 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
+                {t.dressCode.suggestions.items[0]?.split(":")[0]}
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-lg overflow-hidden border border-gold/20">
+                  <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full w-full h-[180px] sm:h-[200px] object-cover" />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-gold/20">
+                  <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full w-full h-[180px] sm:h-[200px] object-cover" />
+                </div>
+              </div>
+            </div>
+            <div>
+              <p className="text-gold-light text-sm mb-3 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
+                {t.dressCode.suggestions.items[1]?.split(":")[0]}
+              </p>
+              <div className="grid grid-cols-2 gap-3">
+                <div className="rounded-lg overflow-hidden border border-gold/20">
+                  <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full w-full h-[180px] sm:h-[200px] object-cover" />
+                </div>
+                <div className="rounded-lg overflow-hidden border border-gold/20">
+                  <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full w-full h-[180px] sm:h-[200px] object-cover" />
+                </div>
+              </div>
+            </div>
+          </div>
+        </ScrollAnimation>
       </div>
     </section>
   );
