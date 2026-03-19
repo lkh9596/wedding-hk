@@ -87,7 +87,7 @@ export default function DressCode() {
             <div className="rounded-lg overflow-hidden border border-gold/20">
               <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full object-contain" />
             </div>
-            <p className="text-gold-light text-sm mb-2 mt-6 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
+            <p className="text-gold-light text-lg mb-3 mt-6 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
               {t.dressCode.suggestions.items[1]?.split(":")[0]}
             </p>
             <div className="rounded-lg overflow-hidden border border-gold/20">
