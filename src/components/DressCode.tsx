@@ -78,7 +78,7 @@ export default function DressCode() {
         {/* Dress code example photos */}
         <ScrollAnimation>
           <div className="mt-10 max-w-md mx-auto space-y-4">
-            <p className="text-gold-light text-sm mb-2 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
+            <p className="text-gold-light text-lg mb-3 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
               {t.dressCode.suggestions.items[0]?.split(":")[0]}
             </p>
             <div className="rounded-lg overflow-hidden border border-gold/20">
