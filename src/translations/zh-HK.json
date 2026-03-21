@@ -76,8 +76,12 @@
         "label": "搭地鐵"
       },
       {
-        "caption": "KU Convention Wedding Hall 專用停車場（免費1小時）\n建大獸醫學院停車場（免費2小時）",
-        "label": "揸車"
+        "caption": "KU Convention Wedding Hall 專用停車場（免費1小時）",
+        "label": "停車場 1"
+      },
+      {
+        "caption": "建大獸醫學院停車場（免費2小時）",
+        "label": "停車場 2"
       },
       {
         "caption": "場地入口喺大廈正門中間",

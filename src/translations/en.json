@@ -76,11 +76,15 @@
         "label": "From Subway"
       },
       {
-        "caption": "KU Convention Wedding Hall parking (1 hour free)\nKonkuk Univ. Veterinary College parking (2 hours free)",
-        "label": "By Car"
+        "caption": "KU Convention Wedding Hall parking (1 hour free)",
+        "label": "Parking 1"
       },
       {
-        "caption": "The venue entrance is at the front of the building, center",
+        "caption": "Konkuk Univ. Veterinary College parking (2 hours free)",
+        "label": "Parking 2"
+      },
+      {
+        "caption": "The venue entrance is at the front of the building",
         "label": "Entrance"
       }
     ],

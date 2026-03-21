@@ -89,33 +89,58 @@ export default function Venue() {
           </div>
         </ScrollAnimation>
 
-        <div className="grid sm:grid-cols-3 gap-6">
-          {t.venue.directions.map((dir, index) => (
-            <ScrollAnimation
-              key={index}
-              animation="animate-on-scroll animate-scale-in"
-            >
-              <div className="bg-cream rounded-xl border border-gold/15 overflow-hidden hover:shadow-md transition-shadow duration-300">
-                {/* Image placeholder */}
-                <div className="aspect-[4/3] bg-gradient-to-br from-burgundy/5 to-gold/10 flex flex-col items-center justify-center p-4">
-                  <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center text-burgundy/60 mb-3">
-                    {directionIcons[index]}
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+          {t.venue.directions.map((dir, index) => {
+            const dirPhotos: Record<number, string[]> = {
+              1: ['/dir-car1.jpg'],
+              2: ['/dir-car2.jpg'],
+              3: ['/dir-entrance.jpg'],
+            };
+            const photos = dirPhotos[index];
+
+            return (
+              <ScrollAnimation
+                key={index}
+                animation="animate-on-scroll animate-scale-in"
+              >
+                <div className="bg-cream rounded-xl border border-gold/15 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                  {photos ? (
+                    <div>
+                      {photos.map((src, i) => (
+                        <img
+                          key={i}
+                          src={src}
+                          alt={dir.label}
+                          className="w-full object-cover"
+                          style={{ maxHeight: photos.length > 1 ? "150px" : "200px" }}
+                        />
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="aspect-[4/3] bg-gradient-to-br from-burgundy/5 to-gold/10 flex flex-col items-center justify-center p-4">
+                      <div className="w-16 h-16 rounded-full bg-white/80 flex items-center justify-center text-burgundy/60 mb-3">
+                        {directionIcons[index]}
+                      </div>
+                      <span
+                        className="text-sm font-semibold text-burgundy/70 tracking-wider uppercase"
+                        style={{ fontFamily: "var(--font-heading)" }}
+                      >
+                        {dir.label}
+                      </span>
+                    </div>
+                  )}
+                  <div className="p-4">
+                    <p className="text-sm font-semibold text-burgundy mb-1 text-center" style={{ fontFamily: "var(--font-heading)" }}>
+                      {dir.label}
+                    </p>
+                    <p className="text-sm text-warm-gray text-center leading-relaxed whitespace-pre-line">
+                      {dir.caption}
+                    </p>
                   </div>
-                  <span
-                    className="text-sm font-semibold text-burgundy/70 tracking-wider uppercase"
-                    style={{ fontFamily: "var(--font-heading)" }}
-                  >
-                    {dir.label}
-                  </span>
                 </div>
-                <div className="p-4">
-                  <p className="text-sm text-warm-gray text-center leading-relaxed whitespace-pre-line">
-                    {dir.caption}
-                  </p>
-                </div>
-              </div>
-            </ScrollAnimation>
-          ))}
+              </ScrollAnimation>
+            );
+          })}
         </div>
 
         <ScrollAnimation>
