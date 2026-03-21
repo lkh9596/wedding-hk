@@ -92,12 +92,14 @@ export default function Venue() {
           </div>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {t.venue.directions.map((dir, index) => {
             const dirPhotos: Record<number, string[]> = {
-              1: ['/dir-car1.jpg'],
-              2: ['/dir-car2.jpg'],
-              3: ['/dir-entrance.jpg'],
+              0: ['/line2-2.jpg'],
+              1: ['/line7-1.jpg'],
+              2: ['/dir-car1.jpg'],
+              3: ['/dir-car2.jpg'],
+              4: ['/dir-entrance.jpg'],
             };
             const photos = dirPhotos[index];
 

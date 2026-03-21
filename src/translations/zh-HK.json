@@ -72,8 +72,12 @@
     "directionsTitle": "點樣去",
     "directions": [
       {
-        "caption": "2號線 — 建大入口站5號出口\n7號線 — 建大入口站4號出口",
-        "label": "搭地鐵"
+        "caption": "2號線 — 建大入口站5號出口",
+        "label": "2號線"
+      },
+      {
+        "caption": "7號線 — 建大入口站4號出口",
+        "label": "7號線"
       },
       {
         "caption": "KU Convention Wedding Hall 專用停車場（免費1小時）",
