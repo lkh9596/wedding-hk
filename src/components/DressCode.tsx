@@ -1,16 +1,29 @@
 "use client";
 
+import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
 export default function DressCode() {
   const { t } = useLanguage();
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   return (
     <section
       id="dress-code"
       className="py-20 sm:py-28 bg-gradient-to-b from-burgundy to-burgundy-light relative overflow-hidden"
     >
+      {lightboxSrc && (
+        <div
+          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer"
+          onClick={() => setLightboxSrc(null)}
+        >
+          <button className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl cursor-pointer" onClick={() => setLightboxSrc(null)}>
+            &times;
+          </button>
+          <img src={lightboxSrc} alt="Enlarged" className="max-w-full max-h-[90vh] object-contain rounded-lg" />
+        </div>
+      )}
       {/* Decorative overlay */}
       <div
         className="absolute inset-0 opacity-5"
@@ -82,19 +95,19 @@ export default function DressCode() {
               {t.dressCode.suggestions.items[0]?.split(":")[0]}
             </p>
             <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full object-contain" />
+              <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-f1.jpg")} />
             </div>
             <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full object-contain" />
+              <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-f2.jpg")} />
             </div>
             <p className="text-gold-light text-lg mb-3 mt-6 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
               {t.dressCode.suggestions.items[1]?.split(":")[0]}
             </p>
             <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full object-contain" />
+              <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-m1.jpg")} />
             </div>
             <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full object-contain" />
+              <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-m2.jpg")} />
             </div>
           </div>
         </ScrollAnimation>
