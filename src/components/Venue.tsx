@@ -129,7 +129,7 @@ export default function Venue() {
                 key={index}
                 animation="animate-on-scroll animate-scale-in"
               >
-                <div className="bg-cream rounded-xl border border-gold/15 overflow-hidden hover:shadow-md transition-shadow duration-300">
+                <div className="bg-cream rounded-xl border border-gold/15 overflow-hidden hover:shadow-md transition-shadow duration-300 h-full flex flex-col">
                   {photos ? (
                     <div>
                       {photos.map((src, i) => (
