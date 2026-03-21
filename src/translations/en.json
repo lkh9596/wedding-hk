@@ -98,6 +98,16 @@
       "Continue along the street",
       "You'll see the venue at the crosswalk"
     ],
+    "walkingGuideTitle7": "Walking Guide from Line 7",
+    "walkingGuideSubtitle7": "Konkuk Univ. Station, Exit 4 (~7 min walk)",
+    "line7Steps": [
+      "Head towards Exit 4",
+      "Take the escalator up",
+      "Turn right, then quickly turn left at the crosswalk",
+      "Face the Lotte Department Store",
+      "After the crosswalk, turn left and walk along the road",
+      "You'll see the venue at the crosswalk"
+    ],
     "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!"
   },
   "dressCode": {

@@ -16,6 +16,7 @@ const directionIcons = [
 export default function Venue() {
   const { t } = useLanguage();
   const [showLine2, setShowLine2] = useState(false);
+  const [showLine7, setShowLine7] = useState(false);
 
   return (
     <section id="venue" className="py-20 sm:py-28 bg-white relative">
@@ -193,6 +194,63 @@ export default function Venue() {
                       </span>
                       <p className="text-sm text-warm-gray leading-relaxed">
                         {t.venue.line2Steps[step - 1]}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </ScrollAnimation>
+
+        {/* Walking Guide - Line 7 */}
+        <ScrollAnimation>
+          <div className="mt-4 max-w-md mx-auto">
+            <button
+              onClick={() => setShowLine7(!showLine7)}
+              className="w-full bg-cream rounded-xl border border-gold/15 px-5 py-4 flex items-center justify-between cursor-pointer hover:shadow-md transition-shadow duration-300"
+            >
+              <div className="text-left">
+                <h3
+                  className="text-lg text-burgundy"
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {t.venue.walkingGuideTitle7}
+                </h3>
+                <p className="text-xs text-warm-gray mt-1">{t.venue.walkingGuideSubtitle7}</p>
+              </div>
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                className="text-gold shrink-0 ml-3 transition-transform duration-300"
+                style={{ transform: showLine7 ? "rotate(180deg)" : "rotate(0deg)" }}
+              >
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+
+            {showLine7 && (
+              <div className="mt-4 space-y-4">
+                {[
+                  { src: "/line7-1.jpg", step: 1 },
+                  { src: "/line7-2.jpg", step: 2 },
+                  { src: "/line7-3.jpg", step: 3 },
+                  { src: "/line7-4.jpg", step: 4 },
+                  { src: "/line7-5.jpg", step: 5 },
+                  { src: "/line7-6.jpg", step: 6 },
+                ].map(({ src, step }) => (
+                  <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
+                    <img src={src} alt={`Step ${step}`} className="w-full object-cover" style={{ maxHeight: "250px" }} />
+                    <div className="px-4 py-3 flex items-start gap-3">
+                      <span className="w-7 h-7 rounded-full bg-burgundy text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
+                        {step}
+                      </span>
+                      <p className="text-sm text-warm-gray leading-relaxed">
+                        {t.venue.line7Steps[step - 1]}
                       </p>
                     </div>
                   </div>
