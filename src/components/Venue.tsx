@@ -4,6 +4,23 @@ import { useState } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
+function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
+  return (
+    <div
+      className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer"
+      onClick={onClose}
+    >
+      <button
+        className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl cursor-pointer"
+        onClick={onClose}
+      >
+        &times;
+      </button>
+      <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg" />
+    </div>
+  );
+}
+
 const directionIcons = [
   // Subway
   <svg key="subway" className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M8 18l-2 2M16 18l2 2M12 2C8 2 5 3.5 5 6v8c0 2 2 4 4 4h6c2 0 4-2 4-4V6c0-2.5-3-4-7-4z" /><circle cx="9" cy="13" r="1.5" /><circle cx="15" cy="13" r="1.5" /><path d="M7 8h10" /></svg>,
@@ -17,9 +34,13 @@ export default function Venue() {
   const { t } = useLanguage();
   const [showLine2, setShowLine2] = useState(false);
   const [showLine7, setShowLine7] = useState(false);
+  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
 
   return (
     <section id="venue" className="py-20 sm:py-28 bg-white relative">
+      {lightboxSrc && (
+        <ImageLightbox src={lightboxSrc} alt="Enlarged photo" onClose={() => setLightboxSrc(null)} />
+      )}
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
@@ -116,8 +137,9 @@ export default function Venue() {
                           key={i}
                           src={src}
                           alt={dir.label}
-                          className="w-full object-cover"
-                          style={{ maxHeight: photos.length > 1 ? "150px" : "200px" }}
+                          className="w-full object-cover cursor-pointer"
+                          style={{ maxHeight: "200px" }}
+                          onClick={() => setLightboxSrc(src)}
                         />
                       ))}
                     </div>
@@ -189,7 +211,7 @@ export default function Venue() {
                   { src: "/line2-6.jpg", step: 6 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
-                    <img src={src} alt={`Step ${step}`} className="w-full object-cover" style={{ maxHeight: "250px" }} />
+                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)} />
                     <div className="px-4 py-3 flex items-start gap-3">
                       <span className="w-7 h-7 rounded-full bg-burgundy text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                         {step}
@@ -246,7 +268,7 @@ export default function Venue() {
                   { src: "/line7-6.jpg", step: 6 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
-                    <img src={src} alt={`Step ${step}`} className="w-full object-cover" style={{ maxHeight: "250px" }} />
+                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)} />
                     <div className="px-4 py-3 flex items-start gap-3">
                       <span className="w-7 h-7 rounded-full bg-burgundy text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                         {step}
