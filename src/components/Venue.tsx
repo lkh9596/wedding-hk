@@ -138,7 +138,7 @@ export default function Venue() {
                           src={src}
                           alt={dir.label}
                           className="w-full object-cover cursor-pointer"
-                          style={{ maxHeight: "200px" }}
+                          style={{ height: "180px" }}
                           onClick={() => setLightboxSrc(src)}
                         />
                       ))}
