@@ -88,6 +88,16 @@
         "label": "入口"
       }
     ],
+    "walkingGuideTitle": "2號線步行指南",
+    "walkingGuideSubtitle": "建大入口站5號出口（步行約5分鐘）",
+    "line2Steps": [
+      "過閘機出地鐵",
+      "行去5號出口",
+      "直行——前面會見到樂天百貨",
+      "繼續沿路直行",
+      "繼續沿街行",
+      "喺斑馬線會見到場地"
+    ],
     "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！"
   },
   "dressCode": {

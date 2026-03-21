@@ -88,6 +88,16 @@
         "label": "Entrance"
       }
     ],
+    "walkingGuideTitle": "Walking Guide from Line 2",
+    "walkingGuideSubtitle": "Konkuk Univ. Station, Exit 5 (~5 min walk)",
+    "line2Steps": [
+      "Go through the turnstile and exit the metro gates",
+      "Head towards Exit 5",
+      "Go straight — you'll see Lotte Department Store ahead",
+      "Keep walking straight along the road",
+      "Continue along the street",
+      "You'll see the venue at the crosswalk"
+    ],
     "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!"
   },
   "dressCode": {
