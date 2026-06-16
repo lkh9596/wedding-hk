@@ -81,6 +81,32 @@ export default function Venue() {
                 <p className="text-warm-gray leading-relaxed">
                   {t.venue.address}
                 </p>
+                <div className="mt-5 flex flex-wrap gap-2">
+                  <a
+                    href="https://map.naver.com/p/search/KU%20Convention%20Wedding%20Hall"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-lg border border-gold/40 text-burgundy text-sm font-medium hover:bg-gold hover:text-white transition-colors"
+                  >
+                    Naver Map
+                  </a>
+                  <a
+                    href="https://map.kakao.com/?q=KU%20Convention%20Wedding%20Hall"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-lg border border-gold/40 text-burgundy text-sm font-medium hover:bg-gold hover:text-white transition-colors"
+                  >
+                    Kakao Map
+                  </a>
+                  <a
+                    href="https://www.google.com/maps/search/?api=1&query=KU+Convention+Wedding+Hall"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-4 py-2 rounded-lg border border-gold/40 text-burgundy text-sm font-medium hover:bg-gold hover:text-white transition-colors"
+                  >
+                    Google Maps
+                  </a>
+                </div>
               </div>
             </div>
           </ScrollAnimation>

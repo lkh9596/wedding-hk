@@ -90,24 +90,28 @@ export default function DressCode() {
 
         {/* Dress code example photos */}
         <ScrollAnimation>
-          <div className="mt-10 max-w-md mx-auto space-y-4">
-            <p className="text-gold-light text-lg mb-3 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
-              {t.dressCode.suggestions.items[0]?.split(":")[0]}
-            </p>
-            <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-f1.jpg")} />
+          <div className="mt-10 max-w-3xl mx-auto grid sm:grid-cols-2 gap-8">
+            <div className="space-y-4">
+              <p className="text-gold-light text-lg tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
+                {t.dressCode.suggestions.items[0]?.split(":")[0]}
+              </p>
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+                <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f1.jpg")} />
+              </div>
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+                <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f2.jpg")} />
+              </div>
             </div>
-            <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-f2.jpg")} />
-            </div>
-            <p className="text-gold-light text-lg mb-3 mt-6 tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
-              {t.dressCode.suggestions.items[1]?.split(":")[0]}
-            </p>
-            <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-m1.jpg")} />
-            </div>
-            <div className="rounded-lg overflow-hidden border border-gold/20">
-              <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full object-contain cursor-pointer" onClick={() => setLightboxSrc("/dress-m2.jpg")} />
+            <div className="space-y-4">
+              <p className="text-gold-light text-lg tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
+                {t.dressCode.suggestions.items[1]?.split(":")[0]}
+              </p>
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+                <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m1.jpg")} />
+              </div>
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+                <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m2.jpg")} />
+              </div>
             </div>
           </div>
         </ScrollAnimation>
