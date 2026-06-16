@@ -114,10 +114,10 @@ export default function Gallery() {
             {t.gallery.photos.map((label, index) => (
               <div
                 key={index}
-                className="flex-shrink-0 w-[250px] sm:w-[280px] snap-center"
+                className="flex-shrink-0 w-full sm:w-[280px] snap-center"
               >
                 <div className="relative rounded-xl overflow-hidden border border-gold/10 hover:shadow-lg transition-shadow duration-300 group">
-                  <div className="aspect-[3/4]">
+                  <div className="aspect-[4/5] sm:aspect-[3/4]">
                     <img
                       src={photos[index]}
                       alt={label}

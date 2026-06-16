@@ -41,14 +41,12 @@ export default function Countdown() {
     return () => clearInterval(timer);
   }, []);
 
-  const blocks = timeLeft
-    ? [
-        { value: timeLeft.days, label: t.countdown.days },
-        { value: timeLeft.hours, label: t.countdown.hours },
-        { value: timeLeft.minutes, label: t.countdown.minutes },
-        { value: timeLeft.seconds, label: t.countdown.seconds },
-      ]
-    : [];
+  const blocks = [
+    { value: timeLeft?.days, label: t.countdown.days },
+    { value: timeLeft?.hours, label: t.countdown.hours },
+    { value: timeLeft?.minutes, label: t.countdown.minutes },
+    { value: timeLeft?.seconds, label: t.countdown.seconds },
+  ];
 
   return (
     <section className="py-20 sm:py-28 bg-cream relative overflow-hidden">
@@ -81,7 +79,7 @@ export default function Countdown() {
               {t.countdown.passed}
             </p>
           </ScrollAnimation>
-        ) : timeLeft ? (
+        ) : (
           <ScrollAnimation className="stagger-children">
             <div className="flex justify-center gap-4 sm:gap-8">
               {blocks.map((block) => (
@@ -91,7 +89,7 @@ export default function Countdown() {
                       className="text-3xl sm:text-5xl text-burgundy font-light"
                       style={{ fontFamily: "var(--font-heading)" }}
                     >
-                      {String(block.value).padStart(2, "0")}
+                      {block.value === undefined ? "--" : String(block.value).padStart(2, "0")}
                     </span>
                   </div>
                   <p className="text-xs sm:text-sm uppercase tracking-[0.15em] text-warm-gray">
@@ -101,7 +99,7 @@ export default function Countdown() {
               ))}
             </div>
           </ScrollAnimation>
-        ) : null}
+        )}
 
         <div className="section-divider mt-16" />
       </div>
