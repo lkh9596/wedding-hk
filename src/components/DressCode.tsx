@@ -95,10 +95,10 @@ export default function DressCode() {
               <p className="text-gold-light text-lg tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
                 {t.dressCode.suggestions.items[0]?.split(":")[0]}
               </p>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
                 <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f1.jpg")} />
               </div>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
                 <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f2.jpg")} />
               </div>
             </div>
@@ -106,10 +106,10 @@ export default function DressCode() {
               <p className="text-gold-light text-lg tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
                 {t.dressCode.suggestions.items[1]?.split(":")[0]}
               </p>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
                 <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m1.jpg")} />
               </div>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[3/4]">
+              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
                 <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m2.jpg")} />
               </div>
             </div>
