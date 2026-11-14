@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
@@ -33,6 +33,41 @@ const directionIcons = [
 
 export default function Venue() {
   const { t } = useLanguage();
+  const [copied, setCopied] = useState(false);
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (copyTimer.current) clearTimeout(copyTimer.current);
+  }, []);
+
+  async function copyAddress() {
+    const address = t.venue.koreanAddress;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(address);
+    } catch {
+      const previousFocus = document.activeElement as HTMLElement | null;
+      const textarea = document.createElement("textarea");
+      textarea.value = address;
+      textarea.readOnly = true;
+      textarea.style.cssText = "position:fixed;left:-9999px;top:0;opacity:0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, address.length);
+      try {
+        if (!document.execCommand("copy")) return;
+      } catch {
+        return;
+      } finally {
+        textarea.remove();
+        previousFocus?.focus({ preventScroll: true });
+      }
+    }
+    setCopied(true);
+    if (copyTimer.current) clearTimeout(copyTimer.current);
+    copyTimer.current = setTimeout(() => setCopied(false), 2000);
+  }
+
   const [showLine2, setShowLine2] = useState(false);
   const [showLine7, setShowLine7] = useState(false);
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
@@ -82,9 +117,16 @@ export default function Venue() {
                 <p className="text-warm-gray leading-relaxed">
                   {t.venue.address}
                 </p>
+                <div className="mt-4 rounded-lg bg-white/70 p-3">
+                  <p className="text-xs text-warm-gray mb-2">{t.venue.koreanAddressLabel}</p>
+                  <p lang="ko" className="text-sm text-burgundy leading-relaxed">{t.venue.koreanAddress}</p>
+                  <button type="button" onClick={copyAddress} className="mt-2 rounded-full border border-gold/40 px-3 py-1 text-sm text-burgundy hover:bg-cream cursor-pointer">
+                    <span aria-live="polite">{copied ? t.venue.copied : t.venue.copyAddress}</span>
+                  </button>
+                </div>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <a
-                    href="https://map.naver.com/p/search/KU%20Convention%20Wedding%20Hall"
+                    href="https://map.naver.com/p/search/KU컨벤션웨딩홀"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-lg border border-gold/40 text-burgundy text-sm font-medium hover:bg-gold hover:text-white transition-colors"
@@ -92,7 +134,7 @@ export default function Venue() {
                     Naver Map
                   </a>
                   <a
-                    href="https://map.kakao.com/?q=KU%20Convention%20Wedding%20Hall"
+                    href="https://map.kakao.com/link/to/KU컨벤션웨딩홀,37.5383,127.0746"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-lg border border-gold/40 text-burgundy text-sm font-medium hover:bg-gold hover:text-white transition-colors"

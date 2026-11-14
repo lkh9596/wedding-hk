@@ -116,7 +116,11 @@
       "過完斑馬線之後轉左，沿路行",
       "喺斑馬線會見到場地"
     ],
-    "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！"
+    "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！",
+    "koreanAddressLabel": "韓文地址（可以畀的士司機睇）",
+    "koreanAddress": "서울 광진구 아차산로36길 5 (KU컨벤션 웨딩홀)",
+    "copyAddress": "複製",
+    "copied": "已複製！"
   },
   "dressCode": {
     "title": "衣著要求",
@@ -166,7 +170,8 @@
       "phone": "+852 5406-1000",
       "email": "manmanjim@gmail.com"
     },
-    "rsvpNote": "請於2027年3月1日前回覆出席"
+    "rsvpNote": "請於2027年3月1日前回覆出席",
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "text": "Ken & Man Man — 2027年4月3日",
