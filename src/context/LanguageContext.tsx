@@ -42,7 +42,6 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
     }
     selected ??= navigator.language.toLowerCase().startsWith("zh") ? "zh-HK" : "en";
     // Browser preferences must be read after hydration to match the English static HTML.
-    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLanguage({ locale: selected, initialized: true });
   }, []);
 

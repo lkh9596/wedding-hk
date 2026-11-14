@@ -71,8 +71,6 @@
     "subtitle": "Where to Find Us",
     "name": "KU Convention Wedding Hall",
     "address": "5 Achasan-ro 36-gil, Gwangjin District, Seoul, Korea",
-    "mapPlaceholder": "Interactive Map",
-    "mapNote": "Map will be embedded here",
     "directionsTitle": "How to Get There",
     "directions": [
       {
@@ -172,7 +170,6 @@
       "phone": "+852 5406-1000",
       "email": "manmanjim@gmail.com"
     },
-    "rsvpNote": "Please RSVP by March 1st, 2027",
     "whatsapp": "WhatsApp"
   },
   "footer": {
