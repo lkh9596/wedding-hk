@@ -14,7 +14,11 @@
     "and": "&",
     "date": "April 3rd, 2027",
     "tagline": "We're getting married!",
-    "scrollDown": "Scroll to explore"
+    "scrollDown": "Scroll to explore",
+    "details": "Saturday · 4:20 PM · Seoul, Korea",
+    "addToCalendar": "Add to Calendar",
+    "googleCalendar": "Google Calendar",
+    "appleOutlook": "Apple / Outlook"
   },
   "countdown": {
     "title": "Counting Down to Our Special Day",

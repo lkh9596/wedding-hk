@@ -14,7 +14,11 @@
     "and": "&",
     "date": "2027年4月3日",
     "tagline": "我哋結婚喇！",
-    "scrollDown": "向下瀏覽"
+    "scrollDown": "向下瀏覽",
+    "details": "星期六 · 下午4:20 · 韓國首爾",
+    "addToCalendar": "加入日曆",
+    "googleCalendar": "Google 日曆",
+    "appleOutlook": "Apple / Outlook 日曆"
   },
   "countdown": {
     "title": "距離我哋嘅大日子",

@@ -1,0 +1,16 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//kenkenandmanman.com//wedding//EN
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+BEGIN:VEVENT
+UID:20270403-wedding@kenkenandmanman.com
+DTSTAMP:20261114T000000Z
+DTSTART:20270403T072000Z
+DTEND:20270403T085000Z
+SUMMARY:Ken & Man Man's Wedding
+LOCATION:KU Convention Wedding Hall\, 5 Achasan-ro 36-gil\, Gwangjin-gu\, Seoul\, South Korea
+DESCRIPTION:Ceremony 4:20 PM (Korea time). Please arrive by 3:50 PM.\nhttps://kenkenandmanman.com
+URL:https://kenkenandmanman.com
+END:VEVENT
+END:VCALENDAR
