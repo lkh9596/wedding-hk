@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
@@ -21,7 +22,7 @@ export default function DressCode() {
           <button className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl cursor-pointer" onClick={() => setLightboxSrc(null)}>
             &times;
           </button>
-          <img src={lightboxSrc} alt="Enlarged" className="max-w-full max-h-[90vh] object-contain rounded-lg" />
+          <img src={lightboxSrc} alt="Enlarged" className="max-w-full max-h-[90vh] object-contain rounded-lg"  {...imageSizes[lightboxSrc]} loading="lazy" decoding="async" />
         </div>
       )}
       {/* Decorative overlay */}
@@ -96,10 +97,10 @@ export default function DressCode() {
                 {t.dressCode.suggestions.items[0]?.split(":")[0]}
               </p>
               <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f1.jpg")} />
+                <img src="/dress-f1.webp" alt="Ladies example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f1.webp")}  {...imageSizes["/dress-f1.webp"]} loading="lazy" decoding="async" />
               </div>
               <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f2.jpg")} />
+                <img src="/dress-f2.webp" alt="Ladies example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f2.webp")}  {...imageSizes["/dress-f2.webp"]} loading="lazy" decoding="async" />
               </div>
             </div>
             <div className="space-y-4">
@@ -107,10 +108,10 @@ export default function DressCode() {
                 {t.dressCode.suggestions.items[1]?.split(":")[0]}
               </p>
               <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m1.jpg")} />
+                <img src="/dress-m1.webp" alt="Gentlemen example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m1.webp")}  {...imageSizes["/dress-m1.webp"]} loading="lazy" decoding="async" />
               </div>
               <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m2.jpg")} />
+                <img src="/dress-m2.webp" alt="Gentlemen example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m2.webp")}  {...imageSizes["/dress-m2.webp"]} loading="lazy" decoding="async" />
               </div>
             </div>
           </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
@@ -16,7 +17,7 @@ function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClos
       >
         &times;
       </button>
-      <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg" />
+      <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg"  {...imageSizes[src]} loading="lazy" decoding="async" />
     </div>
   );
 }
@@ -142,11 +143,11 @@ export default function Venue() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {t.venue.directions.map((dir, index) => {
             const dirPhotos: Record<number, string[]> = {
-              0: ['/line2-2.jpg'],
-              1: ['/line7-1.jpg'],
-              2: ['/dir-car1.jpg'],
-              3: ['/dir-car2.jpg'],
-              4: ['/dir-entrance.jpg'],
+              0: ['/line2-2.webp'],
+              1: ['/line7-1.webp'],
+              2: ['/dir-car1.webp'],
+              3: ['/dir-car2.webp'],
+              4: ['/dir-entrance.webp'],
             };
             const photos = dirPhotos[index];
 
@@ -166,7 +167,7 @@ export default function Venue() {
                           className="w-full object-cover cursor-pointer"
                           style={{ height: "180px" }}
                           onClick={() => setLightboxSrc(src)}
-                        />
+                         {...imageSizes[src]} loading="lazy" decoding="async" />
                       ))}
                     </div>
                   ) : (
@@ -229,15 +230,15 @@ export default function Venue() {
             {showLine2 && (
               <div className="mt-4 space-y-4">
                 {[
-                  { src: "/line2-1.jpg", step: 1 },
-                  { src: "/line2-2.jpg", step: 2 },
-                  { src: "/line2-3.jpg", step: 3 },
-                  { src: "/line2-4.jpg", step: 4 },
-                  { src: "/line2-5.jpg", step: 5 },
-                  { src: "/line2-6.jpg", step: 6 },
+                  { src: "/line2-1.webp", step: 1 },
+                  { src: "/line2-2.webp", step: 2 },
+                  { src: "/line2-3.webp", step: 3 },
+                  { src: "/line2-4.webp", step: 4 },
+                  { src: "/line2-5.webp", step: 5 },
+                  { src: "/line2-6.webp", step: 6 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
-                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)} />
+                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)}  {...imageSizes[src]} loading="lazy" decoding="async" />
                     <div className="px-4 py-3 flex items-start gap-3">
                       <span className="w-7 h-7 rounded-full bg-burgundy text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                         {step}
@@ -286,15 +287,15 @@ export default function Venue() {
             {showLine7 && (
               <div className="mt-4 space-y-4">
                 {[
-                  { src: "/line7-1.jpg", step: 1 },
-                  { src: "/line7-2.jpg", step: 2 },
-                  { src: "/line7-3.jpg", step: 3 },
-                  { src: "/line7-4.jpg", step: 4 },
-                  { src: "/line7-5.jpg", step: 5 },
-                  { src: "/line7-6.jpg", step: 6 },
+                  { src: "/line7-1.webp", step: 1 },
+                  { src: "/line7-2.webp", step: 2 },
+                  { src: "/line7-3.webp", step: 3 },
+                  { src: "/line7-4.webp", step: 4 },
+                  { src: "/line7-5.webp", step: 5 },
+                  { src: "/line7-6.webp", step: 6 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
-                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)} />
+                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)}  {...imageSizes[src]} loading="lazy" decoding="async" />
                     <div className="px-4 py-3 flex items-start gap-3">
                       <span className="w-7 h-7 rounded-full bg-burgundy text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                         {step}

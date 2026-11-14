@@ -1,8 +1,7 @@
 "use client";
 
+import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
-
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
 
 export default function Hero() {
   const { t } = useLanguage();
@@ -33,10 +32,10 @@ export default function Hero() {
         {/* Couple photo */}
         <div className="mx-auto mb-8 w-48 h-48 sm:w-56 sm:h-56 rounded-full border-4 border-gold/60 overflow-hidden animate-float">
           <img
-            src={`${basePath}/IMG_7462.jpg`}
+            src={`/hero.webp`}
             alt="Ken & Man Man"
             className="w-full h-full object-cover"
-          />
+           {...imageSizes[`/hero.webp`]} fetchPriority="high" />
         </div>
 
         {/* Tagline */}

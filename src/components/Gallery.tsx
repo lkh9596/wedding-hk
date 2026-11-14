@@ -1,24 +1,23 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
-const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
-
 const photos = [
-  `${basePath}/10.JPG`,
-  `${basePath}/4.jpg`,
-  `${basePath}/6.JPG`,
-  `${basePath}/7.JPG`,
-  `${basePath}/14.JPG`,
-  `${basePath}/2.jpg`,
-  `${basePath}/3.jpg`,
-  `${basePath}/11.JPG`,
-  `${basePath}/12.JPG`,
-  `${basePath}/5.JPG`,
-  `${basePath}/13.JPG`,
-  `${basePath}/9.JPG`,
+  `/10.webp`,
+  `/4.webp`,
+  `/6.webp`,
+  `/7.webp`,
+  `/14.webp`,
+  `/2.webp`,
+  `/3.webp`,
+  `/11.webp`,
+  `/12.webp`,
+  `/5.webp`,
+  `/13.webp`,
+  `/9.webp`,
 ];
 
 export default function Gallery() {
@@ -122,7 +121,7 @@ export default function Gallery() {
                       src={photos[index]}
                       alt={label}
                       className="w-full h-full object-cover"
-                    />
+                     {...imageSizes[photos[index]]} loading="lazy" decoding="async" />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <span
