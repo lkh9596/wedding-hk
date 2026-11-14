@@ -7,6 +7,8 @@ interface ContactPerson {
   label: string;
   name: string;
   phone: string;
+  // WhatsApp number when it differs from the phone shown for calls.
+  whatsapp?: string;
   email: string;
 }
 
@@ -40,7 +42,7 @@ function ContactCard({ person, whatsappLabel }: { person: ContactPerson; whatsap
           </svg>
           {person.phone}
         </a>
-        <a href={`https://wa.me/${person.phone.replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:text-burgundy transition-colors">
+        <a href={`https://wa.me/${(person.whatsapp ?? person.phone).replace(/\D/g, "")}`} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 hover:text-burgundy transition-colors">
           <svg className="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5" aria-hidden="true">
             <path d="M21 11.5a8.5 8.5 0 01-8.5 8.5H4l-3 2 2-6a8.5 8.5 0 1118-4.5z" />
           </svg>
