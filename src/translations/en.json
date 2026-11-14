@@ -72,24 +72,6 @@
     "name": "KU Convention Wedding Hall",
     "address": "5 Achasan-ro 36-gil, Gwangjin District, Seoul, Korea",
     "directionsTitle": "How to Get There",
-    "directions": [
-      {
-        "caption": "Line 2 — Konkuk Univ. Station, Exit 5",
-        "label": "Subway Line 2"
-      },
-      {
-        "caption": "Line 7 — Konkuk Univ. Station, Exit 4",
-        "label": "Subway Line 7"
-      },
-      {
-        "caption": "KU Convention Wedding Hall parking (1 hour free)",
-        "label": "Parking 1"
-      },
-      {
-        "caption": "Konkuk Univ. Veterinary College parking (2 hours free)",
-        "label": "Parking 2"
-      }
-    ],
     "walkingGuideTitle": "Walking Guide from Line 2",
     "walkingGuideSubtitle": "Konkuk Univ. Station, Exit 5 (~5 min walk)",
     "line2Steps": [
@@ -111,6 +93,18 @@
       "After the crosswalk, turn left and walk along the road",
       "You'll see the venue at the crosswalk",
       "The venue entrance is at the front of the building"
+    ],
+    "parkingTitle": "Parking for Drivers",
+    "parkingSubtitle": "Two car parks near the venue",
+    "parking": [
+      {
+        "caption": "KU Convention Wedding Hall parking (1 hour free)",
+        "label": "Parking 1"
+      },
+      {
+        "caption": "Konkuk Univ. Veterinary College parking (2 hours free)",
+        "label": "Parking 2"
+      }
     ],
     "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!",
     "koreanAddressLabel": "Korean address (show this to your taxi driver)",

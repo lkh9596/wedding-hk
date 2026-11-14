@@ -72,24 +72,6 @@
     "name": "KU Convention Wedding Hall",
     "address": "韓國首爾廣津區峨嵯山路36街5號",
     "directionsTitle": "點樣去",
-    "directions": [
-      {
-        "caption": "2號線 — 建大入口站5號出口",
-        "label": "地鐵2號線"
-      },
-      {
-        "caption": "7號線 — 建大入口站4號出口",
-        "label": "地鐵7號線"
-      },
-      {
-        "caption": "KU Convention Wedding Hall 專用停車場（免費1小時）",
-        "label": "停車場 1"
-      },
-      {
-        "caption": "建大獸醫學院停車場（免費2小時）",
-        "label": "停車場 2"
-      }
-    ],
     "walkingGuideTitle": "2號線步行指南",
     "walkingGuideSubtitle": "建大入口站5號出口（步行約5分鐘）",
     "line2Steps": [
@@ -111,6 +93,18 @@
       "過完斑馬線之後轉左，沿路行",
       "喺斑馬線會見到場地",
       "場地入口喺大廈正門中間"
+    ],
+    "parkingTitle": "自駕人士停車資訊",
+    "parkingSubtitle": "場地附近有兩個停車場",
+    "parking": [
+      {
+        "caption": "KU Convention Wedding Hall 專用停車場（免費1小時）",
+        "label": "停車場 1"
+      },
+      {
+        "caption": "建大獸醫學院停車場（免費2小時）",
+        "label": "停車場 2"
+      }
     ],
     "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！",
     "koreanAddressLabel": "韓文地址（可以畀的士司機睇）",
