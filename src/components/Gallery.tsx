@@ -3,26 +3,28 @@
 import { useState, useRef, useEffect } from "react";
 import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
+import Lightbox, { type LightboxPhoto } from "./Lightbox";
 import ScrollAnimation from "./ScrollAnimation";
 
 const photos = [
-  `/10.webp`,
-  `/4.webp`,
-  `/6.webp`,
-  `/7.webp`,
-  `/14.webp`,
-  `/2.webp`,
-  `/3.webp`,
-  `/11.webp`,
-  `/12.webp`,
-  `/5.webp`,
-  `/13.webp`,
-  `/9.webp`,
+  "/10.webp",
+  "/4.webp",
+  "/6.webp",
+  "/7.webp",
+  "/14.webp",
+  "/2.webp",
+  "/3.webp",
+  "/11.webp",
+  "/12.webp",
+  "/5.webp",
+  "/13.webp",
+  "/9.webp",
 ];
 
 export default function Gallery() {
   const { t } = useLanguage();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const [lightbox, setLightbox] = useState<LightboxPhoto | null>(null);
   const [activeIndex, setActiveIndex] = useState(0);
   const [canScrollLeft, setCanScrollLeft] = useState(false);
   const [canScrollRight, setCanScrollRight] = useState(true);
@@ -33,24 +35,45 @@ export default function Gallery() {
     setCanScrollLeft(el.scrollLeft > 10);
     setCanScrollRight(el.scrollLeft < el.scrollWidth - el.clientWidth - 10);
 
-    const cardWidth = el.querySelector("div")?.offsetWidth || 280;
-    const gap = 16;
-    const index = Math.round(el.scrollLeft / (cardWidth + gap));
-    setActiveIndex(Math.min(index, photos.length - 1));
+    const maxScroll = el.scrollWidth - el.clientWidth;
+    if (el.scrollLeft <= 1) {
+      setActiveIndex(0);
+    } else if (el.scrollLeft >= maxScroll - 1) {
+      setActiveIndex(photos.length - 1);
+    } else {
+      const center = el.scrollLeft + el.clientWidth / 2;
+      const stripLeft = el.getBoundingClientRect().left;
+      let nearest = 0;
+      let nearestDistance = Infinity;
+      Array.from(el.children).forEach((card, index) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left - stripLeft + el.scrollLeft + rect.width / 2;
+        const distance = Math.abs(cardCenter - center);
+        if (distance < nearestDistance) {
+          nearest = index;
+          nearestDistance = distance;
+        }
+      });
+      setActiveIndex(nearest);
+    }
   }
 
   useEffect(() => {
     const el = scrollRef.current;
     if (!el) return;
     el.addEventListener("scroll", updateScrollState, { passive: true });
-    updateScrollState();
-    return () => el.removeEventListener("scroll", updateScrollState);
+    const observer = new ResizeObserver(updateScrollState);
+    observer.observe(el);
+    return () => {
+      el.removeEventListener("scroll", updateScrollState);
+      observer.disconnect();
+    };
   }, []);
 
   function scroll(direction: "left" | "right") {
     const el = scrollRef.current;
     if (!el) return;
-    const cardWidth = el.querySelector("div")?.offsetWidth || 280;
+    const cardWidth = (el.firstElementChild as HTMLElement | null)?.offsetWidth || 280;
     const gap = 16;
     const distance = cardWidth + gap;
     el.scrollBy({
@@ -61,6 +84,7 @@ export default function Gallery() {
 
   return (
     <section id="gallery" className="py-20 sm:py-28 bg-cream relative">
+      {lightbox && <Lightbox {...lightbox} onClose={() => setLightbox(null)} />}
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
@@ -115,13 +139,21 @@ export default function Gallery() {
                 key={index}
                 className="flex-shrink-0 w-full sm:w-[280px] snap-center"
               >
-                <div className="relative rounded-xl overflow-hidden border border-gold/10 hover:shadow-lg transition-shadow duration-300 group">
+                <button
+                  type="button"
+                  aria-label={`${t.common.enlarge}: ${label}`}
+                  onClick={(event) => setLightbox({ trigger: event.currentTarget, src: photos[index], alt: label })}
+                  className="block w-full relative rounded-xl overflow-hidden border border-gold/10 hover:shadow-lg transition-shadow duration-300 group cursor-pointer focus-visible:outline-2 focus-visible:outline-burgundy"
+                >
                   <div className="aspect-[4/5] sm:aspect-[3/4]">
                     <img
                       src={photos[index]}
                       alt={label}
                       className="w-full h-full object-cover"
-                     {...imageSizes[photos[index]]} loading="lazy" decoding="async" />
+                      {...imageSizes[photos[index]]}
+                      loading="lazy"
+                      decoding="async"
+                    />
                   </div>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <span
@@ -131,7 +163,7 @@ export default function Gallery() {
                       {label}
                     </span>
                   </div>
-                </div>
+                </button>
                 <p
                   className="text-center text-sm text-warm-gray mt-3 tracking-wider"
                   style={{ fontFamily: "var(--font-heading)" }}
@@ -156,6 +188,7 @@ export default function Gallery() {
                 className={`w-2 h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   index === activeIndex ? "bg-gold w-6" : "bg-gold/30"
                 }`}
+                aria-current={index === activeIndex ? "true" : undefined}
                 aria-label={`Go to photo ${index + 1}`}
               />
             ))}

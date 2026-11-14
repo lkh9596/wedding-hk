@@ -134,7 +134,9 @@
         "Gentlemen: Suits or dress shirts with slacks and dress shoes",
         "Please avoid: Jeans, sneakers, casual wear, shorts, flip-flops, or white outfits (reserved for the bride)"
       ]
-    }
+    },
+    "ladies": "Ladies",
+    "gentlemen": "Gentlemen"
   },
   "gallery": {
     "title": "Photo Gallery",
@@ -179,5 +181,9 @@
   },
   "lang": {
     "switch": "繁體中文"
+  },
+  "common": {
+    "close": "Close",
+    "enlarge": "Enlarge photo"
   }
 }
