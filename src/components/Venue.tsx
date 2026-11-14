@@ -164,14 +164,13 @@ export default function Venue() {
           </div>
         </ScrollAnimation>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           {t.venue.directions.map((dir, index) => {
             const dirPhotos: Record<number, string[]> = {
               0: ['/line2-2.webp'],
               1: ['/line7-1.webp'],
               2: ['/dir-car1.webp'],
               3: ['/dir-car2.webp'],
-              4: ['/dir-entrance.webp'],
             };
             const photos = dirPhotos[index];
 
@@ -269,6 +268,7 @@ export default function Venue() {
                   { src: "/line2-4.webp", step: 4 },
                   { src: "/line2-5.webp", step: 5 },
                   { src: "/line2-6.webp", step: 6 },
+                  { src: "/dir-entrance.webp", step: 7 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
                     <button type="button" aria-label={`${t.common.enlarge}: ${t.venue.line2Steps[step - 1]}`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src, alt: t.venue.line2Steps[step - 1] })} className="block w-full cursor-pointer focus-visible:outline-2 focus-visible:outline-burgundy focus-visible:-outline-offset-2">
@@ -328,6 +328,7 @@ export default function Venue() {
                   { src: "/line7-4.webp", step: 4 },
                   { src: "/line7-5.webp", step: 5 },
                   { src: "/line7-6.webp", step: 6 },
+                  { src: "/dir-entrance.webp", step: 7 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
                     <button type="button" aria-label={`${t.common.enlarge}: ${t.venue.line7Steps[step - 1]}`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src, alt: t.venue.line7Steps[step - 1] })} className="block w-full cursor-pointer focus-visible:outline-2 focus-visible:outline-burgundy focus-visible:-outline-offset-2">

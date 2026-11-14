@@ -88,10 +88,6 @@
       {
         "caption": "Konkuk Univ. Veterinary College parking (2 hours free)",
         "label": "Parking 2"
-      },
-      {
-        "caption": "The venue entrance is at the front of the building",
-        "label": "Entrance"
       }
     ],
     "walkingGuideTitle": "Walking Guide from Line 2",
@@ -102,7 +98,8 @@
       "Go straight — you'll see Lotte Department Store ahead",
       "Keep walking straight along the road",
       "Continue along the street",
-      "You'll see the venue at the crosswalk"
+      "You'll see the venue at the crosswalk",
+      "The venue entrance is at the front of the building"
     ],
     "walkingGuideTitle7": "Walking Guide from Line 7",
     "walkingGuideSubtitle7": "Konkuk Univ. Station, Exit 4 (~7 min walk)",
@@ -112,7 +109,8 @@
       "Turn right, then quickly turn left at the crosswalk",
       "Face the Lotte Department Store",
       "After the crosswalk, turn left and walk along the road",
-      "You'll see the venue at the crosswalk"
+      "You'll see the venue at the crosswalk",
+      "The venue entrance is at the front of the building"
     ],
     "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!",
     "koreanAddressLabel": "Korean address (show this to your taxi driver)",
