@@ -4,18 +4,14 @@ import { useLanguage } from "@/context/LanguageContext";
 import ScrollAnimation from "./ScrollAnimation";
 
 const icons = [
-  // Guest Arrival - champagne glass
-  <svg key="arrival" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 13V6a1 1 0 011-1h12a1 1 0 011 1v7" /></svg>,
-  // Ceremony - rings
+  // Arrival — clock
+  <svg key="arrival" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></svg>,
+  // Ceremony — rings
   <svg key="ceremony" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><circle cx="9" cy="12" r="5" /><circle cx="15" cy="12" r="5" /></svg>,
-  // Photos - camera
-  <svg key="photos" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M6.827 6.175A2.31 2.31 0 015.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 002.25 2.25h15A2.25 2.25 0 0021.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 00-1.134-.175 2.31 2.31 0 01-1.64-1.055l-.822-1.316a2.192 2.192 0 00-1.736-1.039 48.774 48.774 0 00-5.232 0 2.192 2.192 0 00-1.736 1.039l-.821 1.316z" /><path d="M16.5 12.75a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0z" /></svg>,
-  // Cocktails - glass
-  <svg key="cocktails" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 5l9 8 9-8" /><path d="M12 13v4" /></svg>,
-  // Dinner - utensils
-  <svg key="dinner" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M12 3v18M3 12l4-4v8l-4-4zM21 12l-4-4v8l4-4z" /></svg>,
-  // Dance - music
-  <svg key="dance" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2z" /></svg>,
+  // Dinner — fork and knife
+  <svg key="dinner" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M4 3v5a3 3 0 006 0V3M7 3v18M17 13h3V3c-4 2-5 7-3 10zm0 0v8" /></svg>,
+  // Closing — heart
+  <svg key="closing" className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="1.5"><path d="M20.8 4.6a5.5 5.5 0 00-7.8 0l-1 1-1-1a5.5 5.5 0 00-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 000-7.8z" /></svg>,
 ];
 
 export default function Timeline() {
@@ -29,7 +25,7 @@ export default function Timeline() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-[0.3em] text-gold mb-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-gold-dark mb-3">
               {t.timeline.subtitle}
             </p>
             <h2
@@ -71,7 +67,7 @@ export default function Timeline() {
                           {icons[index]}
                         </div>
                         <span
-                          className="text-sm text-gold font-semibold tracking-wider"
+                          className="text-sm text-gold-dark font-semibold tracking-wider"
                           style={{ fontFamily: "var(--font-heading)" }}
                         >
                           {event.time}

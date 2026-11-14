@@ -62,7 +62,7 @@ export default function Venue() {
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-[0.3em] text-gold mb-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-gold-dark mb-3">
               {t.venue.subtitle}
             </p>
             <h2

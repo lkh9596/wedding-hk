@@ -11,7 +11,7 @@ export default function OurStory() {
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-[0.3em] text-gold mb-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-gold-dark mb-3">
               {t.story.subtitle}
             </p>
             <h2

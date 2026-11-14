@@ -92,7 +92,7 @@ export default function Hero() {
         </div>
 
         {/* Scroll indicator */}
-        <div className="mt-12 animate-bounce">
+        <div className="mt-12 motion-safe:animate-bounce">
           <p className="text-xs tracking-[0.2em] uppercase text-white/50 mb-3">
             {t.hero.scrollDown}
           </p>
