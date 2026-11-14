@@ -2,12 +2,13 @@
 
 @theme inline {
   --color-gold: #D4AF37;
+  --color-gold-dark: #876515;
   --color-gold-light: #E8D48B;
   --color-cream: #FFF8E7;
   --color-ivory: #FFFDF5;
   --color-burgundy: #800020;
   --color-burgundy-light: #A0334D;
-  --color-warm-gray: #8B7D6B;
+  --color-warm-gray: #74685A;
   --font-heading: "Playfair Display", Georgia, serif;
   --font-body: "Lato", Arial, sans-serif;
 }
@@ -79,7 +80,7 @@ body {
   50% { transform: translateY(-10px); }
 }
 
-.animate-on-scroll {
+.js .animate-on-scroll {
   opacity: 0;
 }
 
@@ -165,5 +166,21 @@ body {
   width: 80px;
   height: 2px;
   background: linear-gradient(90deg, transparent, var(--color-gold), transparent);
-  margin: 0 auto;
+  /* Only the horizontal margin: unlayered CSS beats Tailwind utilities, so
+     `margin: 0 auto` here would cancel the mt-6 / mt-16 spacing classes. */
+  margin-inline: auto;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-on-scroll,
+  .js .animate-on-scroll,
+  .animate-on-scroll.is-visible {
+    opacity: 1;
+    animation: none;
+    transform: none;
+  }
+
+  .animate-float {
+    animation: none;
+  }
 }

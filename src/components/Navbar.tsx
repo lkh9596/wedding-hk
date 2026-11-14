@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function Navbar() {
-  const { t, toggleLocale } = useLanguage();
+  const { t, locale, toggleLocale } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -60,9 +60,10 @@ export default function Navbar() {
           ))}
           <button
             onClick={toggleLocale}
+            lang={locale === "en" ? "zh-HK" : "en"}
             className={`ml-2 px-3 py-1.5 rounded-full text-sm border transition-all duration-300 cursor-pointer ${
               scrolled
-                ? "border-gold text-gold hover:bg-gold hover:text-white"
+                ? "border-gold text-gold-dark hover:bg-gold-dark hover:text-white"
                 : "border-white/60 text-white hover:bg-white/20"
             }`}
           >
@@ -74,9 +75,10 @@ export default function Navbar() {
         <div className="flex lg:hidden items-center gap-3">
           <button
             onClick={toggleLocale}
+            lang={locale === "en" ? "zh-HK" : "en"}
             className={`px-3 py-1 rounded-full text-xs border transition-all duration-300 cursor-pointer ${
               scrolled
-                ? "border-gold text-gold"
+                ? "border-gold text-gold-dark"
                 : "border-white/60 text-white"
             }`}
           >

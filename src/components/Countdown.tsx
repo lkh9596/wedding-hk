@@ -73,7 +73,7 @@ export default function Countdown() {
         {hasPassed ? (
           <ScrollAnimation>
             <p
-              className="text-2xl text-gold"
+              className="text-2xl text-gold-dark"
               style={{ fontFamily: "var(--font-heading)" }}
             >
               {t.countdown.passed}
@@ -81,12 +81,12 @@ export default function Countdown() {
           </ScrollAnimation>
         ) : (
           <ScrollAnimation className="stagger-children">
-            <div className="flex justify-center gap-4 sm:gap-8">
+            <div className="grid grid-cols-4 gap-2 sm:gap-6 max-w-sm sm:max-w-[520px] mx-auto">
               {blocks.map((block) => (
                 <div key={block.label}>
-                  <div className="w-20 h-20 sm:w-28 sm:h-28 bg-white rounded-lg shadow-lg border border-gold/20 flex items-center justify-center mb-3">
+                  <div className="aspect-square w-full bg-white rounded-lg shadow-lg border border-gold/20 flex items-center justify-center mb-3">
                     <span
-                      className="text-3xl sm:text-5xl text-burgundy font-light"
+                      className="text-2xl sm:text-5xl text-burgundy font-light"
                       style={{ fontFamily: "var(--font-heading)" }}
                     >
                       {block.value === undefined ? "--" : String(block.value).padStart(2, "0")}

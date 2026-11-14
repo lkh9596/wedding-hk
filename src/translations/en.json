@@ -14,7 +14,11 @@
     "and": "&",
     "date": "April 3rd, 2027",
     "tagline": "We're getting married!",
-    "scrollDown": "Scroll to explore"
+    "scrollDown": "Scroll to explore",
+    "details": "Saturday · 4:20 PM · Seoul, Korea",
+    "addToCalendar": "Add to Calendar",
+    "googleCalendar": "Google Calendar",
+    "appleOutlook": "Apple / Outlook"
   },
   "countdown": {
     "title": "Counting Down to Our Special Day",
@@ -67,8 +71,6 @@
     "subtitle": "Where to Find Us",
     "name": "KU Convention Wedding Hall",
     "address": "5 Achasan-ro 36-gil, Gwangjin District, Seoul, Korea",
-    "mapPlaceholder": "Interactive Map",
-    "mapNote": "Map will be embedded here",
     "directionsTitle": "How to Get There",
     "directions": [
       {
@@ -112,7 +114,11 @@
       "After the crosswalk, turn left and walk along the road",
       "You'll see the venue at the crosswalk"
     ],
-    "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!"
+    "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!",
+    "koreanAddressLabel": "Korean address (show this to your taxi driver)",
+    "koreanAddress": "서울 광진구 아차산로36길 5 (KU컨벤션 웨딩홀)",
+    "copyAddress": "Copy",
+    "copied": "Copied!"
   },
   "dressCode": {
     "title": "Dress Code",
@@ -126,7 +132,9 @@
         "Gentlemen: Suits or dress shirts with slacks and dress shoes",
         "Please avoid: Jeans, sneakers, casual wear, shorts, flip-flops, or white outfits (reserved for the bride)"
       ]
-    }
+    },
+    "ladies": "Ladies",
+    "gentlemen": "Gentlemen"
   },
   "gallery": {
     "title": "Photo Gallery",
@@ -162,7 +170,7 @@
       "phone": "+852 5406-1000",
       "email": "manmanjim@gmail.com"
     },
-    "rsvpNote": "Please RSVP by March 1st, 2027"
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "text": "Ken & Man Man — April 3, 2027",
@@ -170,5 +178,9 @@
   },
   "lang": {
     "switch": "繁體中文"
+  },
+  "common": {
+    "close": "Close",
+    "enlarge": "Enlarge photo"
   }
 }

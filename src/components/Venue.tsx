@@ -1,25 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
+import Lightbox, { type LightboxPhoto } from "./Lightbox";
 import ScrollAnimation from "./ScrollAnimation";
-
-function ImageLightbox({ src, alt, onClose }: { src: string; alt: string; onClose: () => void }) {
-  return (
-    <div
-      className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer"
-      onClick={onClose}
-    >
-      <button
-        className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl cursor-pointer"
-        onClick={onClose}
-      >
-        &times;
-      </button>
-      <img src={src} alt={alt} className="max-w-full max-h-[90vh] object-contain rounded-lg" />
-    </div>
-  );
-}
 
 const directionIcons = [
   // Subway
@@ -32,19 +17,52 @@ const directionIcons = [
 
 export default function Venue() {
   const { t } = useLanguage();
+  const [copied, setCopied] = useState(false);
+  const copyTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  useEffect(() => () => {
+    if (copyTimer.current) clearTimeout(copyTimer.current);
+  }, []);
+
+  async function copyAddress() {
+    const address = t.venue.koreanAddress;
+    try {
+      if (!navigator.clipboard?.writeText) throw new Error("Clipboard unavailable");
+      await navigator.clipboard.writeText(address);
+    } catch {
+      const previousFocus = document.activeElement as HTMLElement | null;
+      const textarea = document.createElement("textarea");
+      textarea.value = address;
+      textarea.readOnly = true;
+      textarea.style.cssText = "position:fixed;left:-9999px;top:0;opacity:0";
+      document.body.appendChild(textarea);
+      textarea.select();
+      textarea.setSelectionRange(0, address.length);
+      try {
+        if (!document.execCommand("copy")) return;
+      } catch {
+        return;
+      } finally {
+        textarea.remove();
+        previousFocus?.focus({ preventScroll: true });
+      }
+    }
+    setCopied(true);
+    if (copyTimer.current) clearTimeout(copyTimer.current);
+    copyTimer.current = setTimeout(() => setCopied(false), 2000);
+  }
+
   const [showLine2, setShowLine2] = useState(false);
   const [showLine7, setShowLine7] = useState(false);
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [lightbox, setLightbox] = useState<LightboxPhoto | null>(null);
 
   return (
     <section id="venue" className="py-20 sm:py-28 bg-white relative">
-      {lightboxSrc && (
-        <ImageLightbox src={lightboxSrc} alt="Enlarged photo" onClose={() => setLightboxSrc(null)} />
-      )}
+      {lightbox && <Lightbox {...lightbox} onClose={() => setLightbox(null)} />}
       <div className="max-w-5xl mx-auto px-4 sm:px-6">
         <ScrollAnimation>
           <div className="text-center mb-16">
-            <p className="text-sm uppercase tracking-[0.3em] text-gold mb-3">
+            <p className="text-sm uppercase tracking-[0.3em] text-gold-dark mb-3">
               {t.venue.subtitle}
             </p>
             <h2
@@ -81,9 +99,16 @@ export default function Venue() {
                 <p className="text-warm-gray leading-relaxed">
                   {t.venue.address}
                 </p>
+                <div className="mt-4 rounded-lg bg-white/70 p-3">
+                  <p className="text-xs text-warm-gray mb-2">{t.venue.koreanAddressLabel}</p>
+                  <p lang="ko" className="text-sm text-burgundy leading-relaxed">{t.venue.koreanAddress}</p>
+                  <button type="button" onClick={copyAddress} className="mt-2 rounded-full border border-gold/40 px-3 py-1 text-sm text-burgundy hover:bg-cream cursor-pointer">
+                    <span aria-live="polite">{copied ? t.venue.copied : t.venue.copyAddress}</span>
+                  </button>
+                </div>
                 <div className="mt-5 flex flex-wrap gap-2">
                   <a
-                    href="https://map.naver.com/p/search/KU%20Convention%20Wedding%20Hall"
+                    href="https://map.naver.com/p/search/KU컨벤션웨딩홀"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-lg border border-gold/40 text-burgundy text-sm font-medium hover:bg-gold hover:text-white transition-colors"
@@ -91,7 +116,7 @@ export default function Venue() {
                     Naver Map
                   </a>
                   <a
-                    href="https://map.kakao.com/?q=KU%20Convention%20Wedding%20Hall"
+                    href="https://map.kakao.com/link/to/KU컨벤션웨딩홀,37.5383,127.0746"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="px-4 py-2 rounded-lg border border-gold/40 text-burgundy text-sm font-medium hover:bg-gold hover:text-white transition-colors"
@@ -142,11 +167,11 @@ export default function Venue() {
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6">
           {t.venue.directions.map((dir, index) => {
             const dirPhotos: Record<number, string[]> = {
-              0: ['/line2-2.jpg'],
-              1: ['/line7-1.jpg'],
-              2: ['/dir-car1.jpg'],
-              3: ['/dir-car2.jpg'],
-              4: ['/dir-entrance.jpg'],
+              0: ['/line2-2.webp'],
+              1: ['/line7-1.webp'],
+              2: ['/dir-car1.webp'],
+              3: ['/dir-car2.webp'],
+              4: ['/dir-entrance.webp'],
             };
             const photos = dirPhotos[index];
 
@@ -159,14 +184,23 @@ export default function Venue() {
                   {photos ? (
                     <div>
                       {photos.map((src, i) => (
-                        <img
+                        <button
                           key={i}
-                          src={src}
-                          alt={dir.label}
-                          className="w-full object-cover cursor-pointer"
-                          style={{ height: "180px" }}
-                          onClick={() => setLightboxSrc(src)}
-                        />
+                          type="button"
+                          aria-label={`${t.common.enlarge}: ${dir.label}`}
+                          onClick={(event) => setLightbox({ trigger: event.currentTarget, src, alt: dir.label })}
+                          className="block w-full cursor-pointer focus-visible:outline-2 focus-visible:outline-burgundy focus-visible:-outline-offset-2"
+                        >
+                          <img
+                            src={src}
+                            alt={dir.label}
+                            className="w-full object-cover"
+                            style={{ height: "180px" }}
+                            {...imageSizes[src]}
+                            loading="lazy"
+                            decoding="async"
+                          />
+                        </button>
                       ))}
                     </div>
                   ) : (
@@ -229,15 +263,17 @@ export default function Venue() {
             {showLine2 && (
               <div className="mt-4 space-y-4">
                 {[
-                  { src: "/line2-1.jpg", step: 1 },
-                  { src: "/line2-2.jpg", step: 2 },
-                  { src: "/line2-3.jpg", step: 3 },
-                  { src: "/line2-4.jpg", step: 4 },
-                  { src: "/line2-5.jpg", step: 5 },
-                  { src: "/line2-6.jpg", step: 6 },
+                  { src: "/line2-1.webp", step: 1 },
+                  { src: "/line2-2.webp", step: 2 },
+                  { src: "/line2-3.webp", step: 3 },
+                  { src: "/line2-4.webp", step: 4 },
+                  { src: "/line2-5.webp", step: 5 },
+                  { src: "/line2-6.webp", step: 6 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
-                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)} />
+                    <button type="button" aria-label={`${t.common.enlarge}: ${t.venue.line2Steps[step - 1]}`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src, alt: t.venue.line2Steps[step - 1] })} className="block w-full cursor-pointer focus-visible:outline-2 focus-visible:outline-burgundy focus-visible:-outline-offset-2">
+                      <img src={src} alt={`Step ${step}`} className="w-full object-cover" style={{ maxHeight: "250px" }} {...imageSizes[src]} loading="lazy" decoding="async" />
+                    </button>
                     <div className="px-4 py-3 flex items-start gap-3">
                       <span className="w-7 h-7 rounded-full bg-burgundy text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                         {step}
@@ -286,15 +322,17 @@ export default function Venue() {
             {showLine7 && (
               <div className="mt-4 space-y-4">
                 {[
-                  { src: "/line7-1.jpg", step: 1 },
-                  { src: "/line7-2.jpg", step: 2 },
-                  { src: "/line7-3.jpg", step: 3 },
-                  { src: "/line7-4.jpg", step: 4 },
-                  { src: "/line7-5.jpg", step: 5 },
-                  { src: "/line7-6.jpg", step: 6 },
+                  { src: "/line7-1.webp", step: 1 },
+                  { src: "/line7-2.webp", step: 2 },
+                  { src: "/line7-3.webp", step: 3 },
+                  { src: "/line7-4.webp", step: 4 },
+                  { src: "/line7-5.webp", step: 5 },
+                  { src: "/line7-6.webp", step: 6 },
                 ].map(({ src, step }) => (
                   <div key={step} className="bg-cream rounded-xl border border-gold/15 overflow-hidden">
-                    <img src={src} alt={`Step ${step}`} className="w-full object-cover cursor-pointer" style={{ maxHeight: "250px" }} onClick={() => setLightboxSrc(src)} />
+                    <button type="button" aria-label={`${t.common.enlarge}: ${t.venue.line7Steps[step - 1]}`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src, alt: t.venue.line7Steps[step - 1] })} className="block w-full cursor-pointer focus-visible:outline-2 focus-visible:outline-burgundy focus-visible:-outline-offset-2">
+                      <img src={src} alt={`Step ${step}`} className="w-full object-cover" style={{ maxHeight: "250px" }} {...imageSizes[src]} loading="lazy" decoding="async" />
+                    </button>
                     <div className="px-4 py-3 flex items-start gap-3">
                       <span className="w-7 h-7 rounded-full bg-burgundy text-white flex items-center justify-center text-xs font-bold shrink-0 mt-0.5">
                         {step}

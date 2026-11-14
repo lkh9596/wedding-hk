@@ -14,7 +14,11 @@
     "and": "&",
     "date": "2027年4月3日",
     "tagline": "我哋結婚喇！",
-    "scrollDown": "向下瀏覽"
+    "scrollDown": "向下瀏覽",
+    "details": "星期六 · 下午4:20 · 韓國首爾",
+    "addToCalendar": "加入日曆",
+    "googleCalendar": "Google 日曆",
+    "appleOutlook": "Apple / Outlook 日曆"
   },
   "countdown": {
     "title": "距離我哋嘅大日子",
@@ -67,8 +71,6 @@
     "subtitle": "點樣搵到我哋",
     "name": "KU Convention Wedding Hall",
     "address": "韓國首爾廣津區峨嵯山路36街5號",
-    "mapPlaceholder": "互動地圖",
-    "mapNote": "地圖將會嵌入呢度",
     "directionsTitle": "點樣去",
     "directions": [
       {
@@ -112,7 +114,11 @@
       "過完斑馬線之後轉左，沿路行",
       "喺斑馬線會見到場地"
     ],
-    "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！"
+    "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！",
+    "koreanAddressLabel": "韓文地址（可以畀的士司機睇）",
+    "koreanAddress": "서울 광진구 아차산로36길 5 (KU컨벤션 웨딩홀)",
+    "copyAddress": "複製",
+    "copied": "已複製！"
   },
   "dressCode": {
     "title": "衣著要求",
@@ -126,7 +132,9 @@
         "男士：西裝或恤衫配西褲同皮鞋",
         "請避免：牛仔褲、波鞋、休閒裝、短褲、拖鞋或白色衫（留畀新娘）"
       ]
-    }
+    },
+    "ladies": "女士",
+    "gentlemen": "男士"
   },
   "gallery": {
     "title": "相簿",
@@ -162,7 +170,7 @@
       "phone": "+852 5406-1000",
       "email": "manmanjim@gmail.com"
     },
-    "rsvpNote": "請於2027年3月1日前回覆出席"
+    "whatsapp": "WhatsApp"
   },
   "footer": {
     "text": "Ken & Man Man — 2027年4月3日",
@@ -170,5 +178,9 @@
   },
   "lang": {
     "switch": "English"
+  },
+  "common": {
+    "close": "關閉",
+    "enlarge": "放大相片"
   }
 }

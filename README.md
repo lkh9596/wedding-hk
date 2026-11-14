@@ -1,36 +1,25 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Ken & Man Man’s wedding
 
-## Getting Started
+A bilingual English / Hong Kong Chinese wedding site for April 3, 2027 in Seoul.
+Built with Next.js and exported as a static site.
 
-First, run the development server:
+- `npm run dev` starts the development server.
+- `npm run build` exports the production site to `out/`.
+- `npm run lint` checks the source.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+A push to `main` deploys to **kenkenandmanman.com** through GitHub Actions and GitHub Pages.
+
+Translations live in `src/translations/en.json` and `src/translations/zh-HK.json`.
+The two files must have matching keys. Add new UI strings to both.
+
+Every new photo must go through `scripts/optimize-images.py` (requires Pillow),
+which preserves ICC colour profiles while removing EXIF and XMP. For example:
+
+```sh
+python3 scripts/optimize-images.py originals/photo.jpg --output-dir public --max-width 1080 --quality 78
+python3 scripts/optimize-images.py --check public
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Use `--square --max-width 600` for a hero portrait. Never overwrite originals;
+keep them outside `public/`. Update `src/lib/imageSizes.ts` with each output’s
+pixel dimensions and use lazy loading for every photo except the hero.

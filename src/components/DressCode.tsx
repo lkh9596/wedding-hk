@@ -1,29 +1,21 @@
 "use client";
 
 import { useState } from "react";
+import { imageSizes } from "@/lib/imageSizes";
 import { useLanguage } from "@/context/LanguageContext";
+import Lightbox, { type LightboxPhoto } from "./Lightbox";
 import ScrollAnimation from "./ScrollAnimation";
 
 export default function DressCode() {
   const { t } = useLanguage();
-  const [lightboxSrc, setLightboxSrc] = useState<string | null>(null);
+  const [lightbox, setLightbox] = useState<LightboxPhoto | null>(null);
 
   return (
     <section
       id="dress-code"
       className="py-20 sm:py-28 bg-gradient-to-b from-burgundy to-burgundy-light relative overflow-hidden"
     >
-      {lightboxSrc && (
-        <div
-          className="fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4 cursor-pointer"
-          onClick={() => setLightboxSrc(null)}
-        >
-          <button className="absolute top-4 right-4 text-white/80 hover:text-white text-3xl cursor-pointer" onClick={() => setLightboxSrc(null)}>
-            &times;
-          </button>
-          <img src={lightboxSrc} alt="Enlarged" className="max-w-full max-h-[90vh] object-contain rounded-lg" />
-        </div>
-      )}
+      {lightbox && <Lightbox {...lightbox} onClose={() => setLightbox(null)} />}
       {/* Decorative overlay */}
       <div
         className="absolute inset-0 opacity-5"
@@ -93,25 +85,25 @@ export default function DressCode() {
           <div className="mt-10 max-w-3xl mx-auto grid sm:grid-cols-2 gap-8">
             <div className="space-y-4">
               <p className="text-gold-light text-lg tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
-                {t.dressCode.suggestions.items[0]?.split(":")[0]}
+                {t.dressCode.ladies}
               </p>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-f1.jpg" alt="Ladies example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f1.jpg")} />
-              </div>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-f2.jpg" alt="Ladies example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-f2.jpg")} />
-              </div>
+              <button type="button" aria-label={`${t.common.enlarge}: Ladies example 1`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src: "/dress-f1.webp", alt: "Ladies example 1" })} className="block w-full rounded-lg overflow-hidden border border-gold/20 aspect-[4/3] cursor-pointer focus-visible:outline-2 focus-visible:outline-gold-light">
+                <img src="/dress-f1.webp" alt="Ladies example 1" className="w-full h-full object-cover" {...imageSizes["/dress-f1.webp"]} loading="lazy" decoding="async" />
+              </button>
+              <button type="button" aria-label={`${t.common.enlarge}: Ladies example 2`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src: "/dress-f2.webp", alt: "Ladies example 2" })} className="block w-full rounded-lg overflow-hidden border border-gold/20 aspect-[4/3] cursor-pointer focus-visible:outline-2 focus-visible:outline-gold-light">
+                <img src="/dress-f2.webp" alt="Ladies example 2" className="w-full h-full object-cover" {...imageSizes["/dress-f2.webp"]} loading="lazy" decoding="async" />
+              </button>
             </div>
             <div className="space-y-4">
               <p className="text-gold-light text-lg tracking-wider text-center" style={{ fontFamily: "var(--font-heading)" }}>
-                {t.dressCode.suggestions.items[1]?.split(":")[0]}
+                {t.dressCode.gentlemen}
               </p>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-m1.jpg" alt="Gentlemen example 1" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m1.jpg")} />
-              </div>
-              <div className="rounded-lg overflow-hidden border border-gold/20 aspect-[4/3]">
-                <img src="/dress-m2.jpg" alt="Gentlemen example 2" className="w-full h-full object-cover cursor-pointer" onClick={() => setLightboxSrc("/dress-m2.jpg")} />
-              </div>
+              <button type="button" aria-label={`${t.common.enlarge}: Gentlemen example 1`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src: "/dress-m1.webp", alt: "Gentlemen example 1" })} className="block w-full rounded-lg overflow-hidden border border-gold/20 aspect-[4/3] cursor-pointer focus-visible:outline-2 focus-visible:outline-gold-light">
+                <img src="/dress-m1.webp" alt="Gentlemen example 1" className="w-full h-full object-cover" {...imageSizes["/dress-m1.webp"]} loading="lazy" decoding="async" />
+              </button>
+              <button type="button" aria-label={`${t.common.enlarge}: Gentlemen example 2`} onClick={(event) => setLightbox({ trigger: event.currentTarget, src: "/dress-m2.webp", alt: "Gentlemen example 2" })} className="block w-full rounded-lg overflow-hidden border border-gold/20 aspect-[4/3] cursor-pointer focus-visible:outline-2 focus-visible:outline-gold-light">
+                <img src="/dress-m2.webp" alt="Gentlemen example 2" className="w-full h-full object-cover" {...imageSizes["/dress-m2.webp"]} loading="lazy" decoding="async" />
+              </button>
             </div>
           </div>
         </ScrollAnimation>
