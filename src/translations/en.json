@@ -12,7 +12,7 @@
     "groom": "Ken Lee",
     "bride": "Man Man Jim",
     "and": "&",
-    "date": "April 3rd, 2027",
+    "date": "3 April 2027",
     "tagline": "We're getting married!",
     "scrollDown": "Scroll to explore",
     "details": "Saturday · 4:20 PM · Seoul, Korea",
@@ -120,8 +120,8 @@
       "title": "Suggestions",
       "items": [
         "Ladies: Elegant blouses with skirts, or dressy separates",
-        "Gentlemen: Suits or dress shirts with slacks and dress shoes",
-        "Please avoid: Jeans, sneakers, casual wear, shorts, flip-flops, or white outfits (reserved for the bride)"
+        "Gentlemen: Suits or dress shirts with trousers and dress shoes",
+        "Please avoid: Jeans, trainers, casual wear, shorts, flip-flops, or white outfits (reserved for the bride)"
       ]
     },
     "ladies": "Ladies",
@@ -165,7 +165,7 @@
     "whatsapp": "WhatsApp"
   },
   "footer": {
-    "text": "Ken & Man Man — April 3, 2027",
+    "text": "Ken & Man Man — 3 April 2027",
     "madeWith": "Made with love"
   },
   "lang": {

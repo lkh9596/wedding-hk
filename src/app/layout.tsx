@@ -18,13 +18,13 @@ const lato = Lato({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://kenkenandmanman.com"),
-  title: "Ken & Man Man | April 3, 2027",
+  title: "Ken & Man Man | 3 April 2027",
   description:
-    "Join us to celebrate the wedding of Ken Lee and Man Man Jim on April 3rd, 2027 at KU Convention Wedding Hall, Seoul.",
+    "Join us to celebrate the wedding of Ken Lee and Man Man Jim on 3 April 2027 at KU Convention Wedding Hall, Seoul.",
   openGraph: {
-    title: "Ken & Man Man | April 3, 2027",
+    title: "Ken & Man Man | 3 April 2027",
     description:
-      "Join us to celebrate the wedding of Ken Lee and Man Man Jim on April 3rd, 2027 at KU Convention Wedding Hall, Seoul.",
+      "Join us to celebrate the wedding of Ken Lee and Man Man Jim on 3 April 2027 at KU Convention Wedding Hall, Seoul.",
     type: "website",
     url: "/",
     images: [{ url: "/og.jpg", width: 1200, height: 630, alt: "Ken & Man Man" }],
