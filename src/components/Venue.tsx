@@ -83,10 +83,10 @@ export default function Venue() {
                   <path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
                 <h3
-                  className="text-2xl text-burgundy mb-2"
+                  className="text-2xl text-burgundy mb-2 text-balance"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  {t.venue.name}
+                  {t.venue.name}{" "}
                   <span className="block text-base text-warm-gray mt-1">{t.venue.university}</span>
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
@@ -134,6 +134,7 @@ export default function Venue() {
             <div className="bg-cream rounded-xl border border-gold/15 overflow-hidden h-full min-h-[280px]">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3163.7113307966206!2d127.0746261!3d37.53830149999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca4e7ac7792b9%3A0xeaff884567b6775a!2sKU%20Convention%20Wedding%20Hall!5e0!3m2!1sen!2skr!4v1773741385700!5m2!1sen!2skr"
+                title={t.venue.mapTitle}
                 width="100%"
                 height="100%"
                 style={{ border: 0, minHeight: "280px" }}
