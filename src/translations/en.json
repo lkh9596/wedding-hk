@@ -69,6 +69,7 @@
     "title": "Venue & Directions",
     "subtitle": "Where to Find Us",
     "name": "KU Convention Wedding Hall",
+    "university": "(Konkuk University)",
     "address": "5 Achasan-ro 36-gil, Gwangjin District, Seoul, Korea",
     "directionsTitle": "How to Get There",
     "walkingGuideTitle": "Walking Guide from Line 2",
@@ -107,7 +108,7 @@
     ],
     "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!",
     "koreanAddressLabel": "Korean address (show this to your taxi driver)",
-    "koreanAddress": "서울 광진구 아차산로36길 5 (KU컨벤션 웨딩홀)",
+    "koreanAddress": "서울 광진구 아차산로36길 5 (건국대학교 KU컨벤션 웨딩홀)",
     "copyAddress": "Copy",
     "copied": "Copied!"
   },

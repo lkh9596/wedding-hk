@@ -6,7 +6,7 @@ import { useLanguage } from "@/context/LanguageContext";
 const googleCalendarUrl = "https://calendar.google.com/calendar/render?action=TEMPLATE"
   + "&text=" + encodeURIComponent("Ken & Man Man's Wedding")
   + "&dates=" + encodeURIComponent("20270403T072000Z/20270403T085000Z")
-  + "&location=" + encodeURIComponent("KU Convention Wedding Hall, 5 Achasan-ro 36-gil, Gwangjin-gu, Seoul, South Korea")
+  + "&location=" + encodeURIComponent("KU Convention Wedding Hall (Konkuk University), 5 Achasan-ro 36-gil, Gwangjin-gu, Seoul, South Korea")
   + "&details=" + encodeURIComponent("Ceremony 4:20 PM (Korea time). Please arrive by 3:50 PM. https://kenkenandmanman.com");
 
 export default function Hero() {
