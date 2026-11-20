@@ -87,6 +87,7 @@ export default function Venue() {
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
                   {t.venue.name}
+                  <span className="block text-base text-warm-gray mt-1">{t.venue.university}</span>
                 </h3>
                 <p className="text-warm-gray leading-relaxed">
                   {t.venue.address}
