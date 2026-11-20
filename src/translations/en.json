@@ -98,15 +98,16 @@
     "parkingSubtitle": "Two car parks near the venue",
     "parking": [
       {
-        "caption": "KU Convention Wedding Hall parking (1 hour free)",
+        "caption": "KU Convention Wedding Hall car park (1 hour free)",
         "label": "Parking 1"
       },
       {
-        "caption": "Konkuk Univ. Veterinary College parking (2 hours free)",
+        "caption": "Konkuk Univ. Veterinary College car park (2 hours free)",
         "label": "Parking 2"
       }
     ],
     "mapTip": "Korea uses Naver Map and Kakao Map for public transportation. We recommend downloading them before your trip!",
+    "mapTitle": "Map of KU Convention Wedding Hall",
     "koreanAddressLabel": "Korean address (show this to your taxi driver)",
     "koreanAddress": "서울 광진구 아차산로36길 5 (건국대학교 KU컨벤션 웨딩홀)",
     "copyAddress": "Copy",

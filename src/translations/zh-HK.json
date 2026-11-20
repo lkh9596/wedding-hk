@@ -69,7 +69,7 @@
     "title": "場地及交通",
     "subtitle": "點樣搵到我哋",
     "name": "KU Convention Wedding Hall",
-    "university": "（建國大學）",
+    "university": "建國大學",
     "address": "韓國首爾廣津區峨嵯山路36街5號",
     "directionsTitle": "點樣去",
     "walkingGuideTitle": "2號線步行指南",
@@ -107,6 +107,7 @@
       }
     ],
     "mapTip": "韓國用Naver Map同Kakao Map搵交通路線，建議出發前先下載！",
+    "mapTitle": "KU Convention Wedding Hall 地圖",
     "koreanAddressLabel": "韓文地址（可以畀的士司機睇）",
     "koreanAddress": "서울 광진구 아차산로36길 5 (건국대학교 KU컨벤션 웨딩홀)",
     "copyAddress": "複製",
